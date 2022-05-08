@@ -1,0 +1,24 @@
+<header id="header">
+    <nav class="header_nav">
+      <li>
+        <a [routerLink]="mainPageUrl" class="logo_text general_link">Logo</a>
+      </li>
+      <li>
+        <input #sertificate_selector (input)="chek()" class="search" type="text" size="50" placeholder="Search by item name">
+        <app-categories-dropdown 
+        (categorySelected)="categorySelectedHandler($event)"
+        [currentValue] = "selectedCategoryId"
+        [name]="'All Categories'" [value]="'NaN'" [attributes] = "['selected']"  
+        style="z-index: 100;">
+        </app-categories-dropdown>
+      </li>
+      <li>
+        <div class="link_container">
+          <a [routerLink]="checkoutUrl"><img height="20px" src="/assets/images/shopping_cart.png"></a>
+          <a [routerLink]="loguinUrl">Login</a>
+          <a>|</a>
+          <a [routerLink]="registerUrl">Sing up</a>
+        </div>
+      </li>
+    </nav>
+  </header>

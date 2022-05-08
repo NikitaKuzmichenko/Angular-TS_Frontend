@@ -1,0 +1,13 @@
+<button 
+    (click) = "clicked($event)"
+    [ngStyle] = "{
+        'backgroundColor': backgroundColor,
+        'color' : color,
+        'borderColor' : borderColor, 
+        'width' : width,
+        'height' : height
+    }"
+    [innerText] = "text" 
+    class="default_button">
+    {{text}}
+</button>

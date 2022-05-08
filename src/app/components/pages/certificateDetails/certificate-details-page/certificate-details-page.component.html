@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<article>
+    <div style="display: flex; flex-direction: row; margin-top: 50px; justify-content: center;">
+
+        <div>
+            <img class="sertificate_img" src={{certificate.img}}>
+            <div>
+                <p class="large_text font_bold">Item Detailed Description</p>
+                <p class="medium_text long_description_text" >{{certificate.longDesc}}</p>
+            </div>
+        </div>
+
+        <div class="short_description_holder">
+            <div class="short_descrition">
+                <p class="large_text font_bold two_lines_limith">Sertificate№1</p>
+                <p class="medium_text" >{{certificate.shortDesc}}</p>
+            </div>
+            <div class="expiration_time">
+                <p class="medium_text font_oblique">Time left to buy</p>
+                <p class="medium_text">{{certificate.expirationDate | expirationtDateFormat}}</p>
+            </div>
+            <div class="price_holder">
+                <p class="large_text font_bold" >{{certificate.price | priceFormat : "$"}}</p>
+                <a>
+                    <div class="link_holder">
+                        <p (click)="addToCart()">Add to Cart</p>
+                        <img height="20px" src="/assets/images/shopping_cart.png" (click)="toCheckout()" >
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</article>

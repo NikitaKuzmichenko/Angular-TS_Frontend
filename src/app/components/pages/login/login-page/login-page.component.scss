@@ -1,0 +1,51 @@
+@import '/src/styles.scss';
+$loginFormWidth : 350px;
+
+.login_circle {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: auto; 
+    background-color: $secodaryHeadeBackGroundColor;
+    height: $loginFormWidth / 2; 
+    width: 50%; 
+    position: relative; 
+    bottom: 100px;
+
+    p{
+        margin-top: 5px;
+        margin-left: 15px;
+        font-size: large; 
+        font-family: $logoFont; 
+        margin: auto;
+        font-size: $logoFontSize; 
+        color: white;
+    }
+}
+
+.login_form{
+    list-style: none;
+    width: $loginFormWidth;  
+    background-color: $formBackGroundColor;
+
+    li:first-of-type{
+        height: 100px;
+    }
+}
+
+.input_block{
+    display: flex;
+    align-content: center; 
+    flex-wrap: wrap; 
+    flex-direction: column;
+    padding-top: 10px; 
+    padding-bottom: 30px;
+}
+
+form{
+    app-button {
+        width:$inputFieldWidth;
+        height: $inputFieldHeight;
+    }
+}

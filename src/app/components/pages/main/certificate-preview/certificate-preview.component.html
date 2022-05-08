@@ -1,0 +1,15 @@
+<div class="sertificate_preView">
+    <img class="preView_img" src={{certificate.img}} (click)="toItemDetails()">
+    <p class="one_lines_limith large_text">{{certificate.itemName}}</p>
+    <p class="small_text">Expiration date : {{certificate.expirationDate.toLocaleDateString()}}</p>
+    <div class="description_holder">
+        <p class="mdium_text two_lines_limith">{{certificate.shortDesc}}</p>
+    </div>
+    <hr>
+    <div>
+        <p class="large_text">{{certificate.price | priceFormat : "$"}}</p>
+        <a>
+            <app-button text="Add to Cart" (buttonCicked)="addToCart()"></app-button>
+        </a>
+    </div>
+</div>

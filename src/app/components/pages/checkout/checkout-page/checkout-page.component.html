@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="seconde_header">
+    <p>Checkout</p>
+</div>
+<article class="checkout_centered_container">
+    <ol id="sertificate_container" class="sertificate_container">
+        <app-purchased-certificate *ngFor="let certificate of certificates " [certificate]="certificate">
+        </app-purchased-certificate>
+    </ol>
+    <hr class="divider">
+
+    <div class="checkout">
+        <p class="large_text font_bold"> Total</p>
+        <p id="total_summ"class="large_text font_bold">{{totalPrice | priceFormat : "$"}}</p>
+    </div>
+
+    <div class="checkout">
+        <div class="two_button_holder">
+            <app-button 
+                width="inherit" 
+                color="black" 
+                backgroundColor="white" 
+                borderColor="black" 
+                text="Back" 
+                (buttonCicked)="back()">
+            </app-button>
+            <app-button 
+                width="inherit" 
+                color="white" 
+                backgroundColor="rgb(140, 185, 72)"
+                borderColor="rgb(140, 185, 72)" 
+                text="Save"
+                (buttonCicked)="submitForm()">
+            </app-button>
+        </div>
+    </div>
+</article>

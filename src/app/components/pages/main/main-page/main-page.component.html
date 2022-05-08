@@ -1,0 +1,10 @@
+<app-header 
+[certificateSelector]="certificateSelector" (certificateSelected)="certificateCelectedHandler($event)"
+[selectedCategoryId]="selectedCategoryId" (categorySelected)="categorySelectedHandler($event)"
+></app-header>
+<app-window-navigator></app-window-navigator>
+<app-categories-preview (categorySelected)="categorySelectedHandler($event)"></app-categories-preview>
+<app-certificate-list
+[certificateSelector]="certificateSelector"
+[selectedCategoryId]="selectedCategoryId"
+></app-certificate-list>

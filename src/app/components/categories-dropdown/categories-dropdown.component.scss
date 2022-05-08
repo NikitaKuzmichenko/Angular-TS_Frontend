@@ -1,0 +1,8 @@
+$borderColor : rgb(8, 8, 8);
+.drop_down{
+    border-color: $borderColor;
+    border-width: 1px;
+    width: inherit;
+    border-radius:0%;
+    min-height: 30px;
+}

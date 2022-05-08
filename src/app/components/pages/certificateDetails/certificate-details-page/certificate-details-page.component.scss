@@ -1,0 +1,71 @@
+
+$imgHieght : 400px;
+$imgWidth : 800px;
+$shortDescWidth : 350px;
+
+body {
+    background-color: rgb(241, 241, 241) !important;
+}
+
+.price_holder{
+
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+    position:absolute;
+	bottom:20px;
+
+    margin-left: 20px; 
+    margin-right: 20px;
+    width: $shortDescWidth - 40;
+
+    margin-top: 10px;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.link_holder{
+    display: flex !important; 
+    flex-direction: row !important;
+    p{
+        font-size: 18px;
+        margin-right: 10px; 
+    }
+}
+
+.short_description_holder{
+    width: $shortDescWidth; 
+    height: $imgHieght;
+    background-color: white;
+    margin-left: 100px;
+
+    position: relative;
+}
+
+.short_descrition{
+    max-height: $imgHieght - 125;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    p{
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+.expiration_time{
+    position:absolute;
+	bottom: 60px;
+    padding: 20px 20px 10px 20px;
+}
+
+.sertificate_img{
+    height: $imgHieght;
+    width: $imgWidth;
+    background-color:rgb(173, 172, 170);
+}
+
+.long_description_text{
+    width: $imgWidth; 
+    margin-top: 30px;
+}

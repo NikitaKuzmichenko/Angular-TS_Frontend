@@ -1,0 +1,28 @@
+@import "../checkout-page/checkout-page.component.scss";
+@import '/src/styles.scss';
+
+.single_item{
+    width: $itemWidth; 
+    height: $itemHight; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+
+    img{
+        height: $imgHight !important; 
+        width: $imgWidth !important;
+    }
+
+    div{
+        margin-left: 50px;
+        width: $itemWidth - $imgWidth - 100px;
+
+        p.logo_text{
+            height: $itemHight - $imgHight;
+        }
+        p.two_lines_limith{
+            width: $itemWidth / 2;
+        }
+    }
+}

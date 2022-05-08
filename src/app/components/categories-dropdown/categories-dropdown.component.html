@@ -1,0 +1,7 @@
+<select #drop_down_categories_container class="drop_down"
+  (focus)="expand()" 
+  (blur)="shrink()" 
+  (change)='blur()' 
+  (change)="selected()">
+    <option *ngFor="let category of categories" value={{category.id}}>{{category.name}}</option>
+</select>

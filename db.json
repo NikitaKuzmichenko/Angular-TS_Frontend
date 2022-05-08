@@ -1,0 +1,268 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "login1",
+      "password": "passwword1",
+      "email": "email2",
+      "firstName": "name1",
+      "address": "not ur business"
+    },
+    {
+      "id": 2,
+      "login": "login2",
+      "password": "passwword21",
+      "email": "email2",
+      "firstName": "name2",
+      "address": "not ur business2"
+    },
+    {
+      "id": 3,
+      "login": "login3",
+      "password": "passwword3",
+      "email": "email3",
+      "firstName": "name3",
+      "address": "not ur business3"
+    },
+    {
+      "login": "1",
+      "password": "1",
+      "email": "email",
+      "address": "address",
+      "id": 4
+    },
+    {
+      "login": "123",
+      "password": "123",
+      "email": "1@3",
+      "address": "123",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "cant fitt here one 1",
+      "img": "/assets/images/vortex.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Category 2",
+      "img": "/assets/images/panda.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Category 3",
+      "img": "/assets/images/three.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Category 4",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Category 5",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Category 6",
+      "img": "/assets/images/random.jpg"
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "copnany": "company1",
+      "itemName": "Certifcate№1",
+      "categoryId": 2,
+      "creationDate": "2020-01-01T23:28:56.782Z",
+      "expirationDate": "2022-09-01T23:28:56.782Z",
+      "price": 23000,
+      "shortDesc": "Donec ullamcorper eros justo, sit amet pretium risus blandit non.",
+      "longDesc": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean efficitur aliquet dui, a placerat massa convallis eget. Morbi arcu quam, pellentesque id risus vel, maximus rutrum quam. In diam felis, porta efficitur tincidunt id, suscipit non metus.",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 2,
+      "copnany": "company2",
+      "itemName": "Long name №2 or something like this",
+      "categoryId": 3,
+      "creationDate": "2018-01-01T23:28:56.782Z",
+      "expirationDate": "2022-07-01T23:28:56.782Z",
+      "price": 330,
+      "shortDesc": "Maecenas ut ex vitae magna egestas bibendum. Sed egestas eleifend fermentum. Nam nec convallis nibh, in tempor quam.",
+      "longDesc": "Maecenas ut ex vitae magna egestas bibendum. Sed egestas eleifend fermentum. Nam nec convallis nibh, in tempor quam.",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 3,
+      "copnany": "company3",
+      "itemName": "Certifcate№3",
+      "categoryId": 3,
+      "creationDate": "2000-01-01T23:28:56.782Z",
+      "expirationDate": "2022-06-01T23:28:56.782Z",
+      "price": 230,
+      "shortDesc": "Mauris tincidunt elementum lobortis. Duis accumsan fermentum ornare. Vivamus accumsan commodo dui, a vulputate ligula iaculis non.",
+      "longDesc": "Quisque arcu massa, sodales lobortis quam at, fermentum fringilla erat. Cras pulvinar ligula vel scelerisque euismod.",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 4,
+      "copnany": "company2",
+      "itemName": "Certifcate№4",
+      "categoryId": 5,
+      "creationDate": "2014-01-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 330,
+      "shortDesc": "Nunc in orci id ante facilisis vulputate scelerisque iaculis sapien. Vestibulum sed vestibulum nunc. Mauris fringilla varius nisi, at lacinia ante scelerisque quis.",
+      "longDesc": "Nunc in orci id ante facilisis vulputate scelerisque iaculis sapien. Vestibulum sed vestibulum nunc. Mauris fringilla varius nisi, at lacinia ante scelerisque quis.",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 5,
+      "copnany": "company1",
+      "itemName": "Certifcate№5",
+      "categoryId": 6,
+      "creationDate": "2014-01-01T23:28:56.782Z",
+      "expirationDate": "2022-08-28T23:28:56.782Z",
+      "price": 230,
+      "shortDesc": "Scelerisque a augue. Suspendisse mattis arcu eget lectus sagittis, vel bibendum tellus aliquet. Vivamus tempus,",
+      "longDesc": "hasellus non magna at ipsum pharetra convallis hendrerit in nulla. Fusce tincidunt varius velit, nec egestas eros vestibulum et",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 6,
+      "copnany": "company2",
+      "itemName": "Short№6",
+      "categoryId": 2,
+      "creationDate": "2014-01-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 3.3,
+      "shortDesc": "Mauris fringilla varius nisi, at lacinia ante scelerisque quis. Maecenas ut ex vitae magna egestas bibendum. Sed egestas eleifend fermentum. ",
+      "longDesc": "Vivamus eros arcu, interdum eu vehicula a, tempor ut magna. Phasellus quam nisl, sodales eget bibendum facilisis, eleifend non felisf",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 7,
+      "copnany": "company1",
+      "itemName": "Certifcate№7",
+      "categoryId": 2,
+      "creationDate": "2014-01-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 20.3,
+      "shortDesc": "Cras vel blandit purus, sit amet cursus tellus. Morbi ullamcorper elementum imperdiet. Vivamus et sapien elit. ",
+      "longDesc": "another one",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 8,
+      "copnany": "company2",
+      "itemName": "Certifcate№8",
+      "categoryId": 1,
+      "creationDate": "2014-01-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 330,
+      "shortDesc": "am cursus orci non posuere rutrum. Pellentesque vestibulum et sapien eget feugiat. Quisque hendrerit lobortis auctor.",
+      "longDesc": "Sed urna quam, iaculis id magna at, imperdiet maximus libero. Nullam ullamcorper dui pulvinar justo congue, at faucibus mi condimentum. Nullam non facilisis ligula.",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 9,
+      "copnany": "company1",
+      "itemName": "Certifcate№9",
+      "categoryId": 6,
+      "creationDate": "2022-01-11T23:28:56.782Z",
+      "expirationDate": "2022-08-23T23:28:56.782Z",
+      "price": 230,
+      "shortDesc": " Suspendisse justo purus, vehicula a lacinia vitae, euismod sit amet nunc. Cras ultricies nisl tortor, id tincidunt nisi aliquet quis",
+      "longDesc": "Sed ut ligula eu sem tempus venenatis. Suspendisse sed tempus quam. Suspendisse justo purus, vehicula a lacinia vitae, euismod sit amet nunc. Cras ultricies nisl tortor, id tincidunt nisi aliquet quis. Donec ornare orci quis diam fringilla ullamcorper. Ut at consequat erat. Ut at vulputate arcu, sit amet elementum nisl. Duis et eros mauris. Ut et libero quis nisl posuere commodo.",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 10,
+      "copnany": "company2",
+      "itemName": "Certifcate№10",
+      "categoryId": 5,
+      "creationDate": "2020-11-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 330,
+      "shortDesc": "Pellentesque sodales augue in leo feugiat sodales. Maecenas quis augue auctor, mollis nisi vitae, tincidunt lorem. Ut elementum facilisis finibus.",
+      "longDesc": "Vivamus finibus massa orci, vel scelerisque massa condimentum non. Cras in rutrum urna, aliquam aliquet eros",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 11,
+      "copnany": "company1",
+      "itemName": "Certifcate№11",
+      "categoryId": 4,
+      "creationDate": "2019-11-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 230,
+      "shortDesc": "make it stop ... ",
+      "longDesc": "short one here",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 12,
+      "copnany": "company2",
+      "itemName": "Certifcate№12",
+      "categoryId": 3,
+      "creationDate": "2014-01-01T23:28:56.782Z",
+      "expirationDate": "2022-05-20T23:28:56.782Z",
+      "price": 3.3,
+      "shortDesc": "Sed varius lobortis tempor. Vivamus convallis nunc eget pulvinar aliquet. Quisque tempor pellentesque quam eget pretium. Proin non nisi quis nisl congue varius. ",
+      "longDesc": " Nullam tempus leo ac ligula eleifend lacinia.",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 13,
+      "copnany": "company1",
+      "itemName": "Certifcate№13",
+      "categoryId": 3,
+      "creationDate": "2019-01-01T23:28:56.782Z",
+      "expirationDate": "2023-01-01T23:28:56.782Z",
+      "price": 230,
+      "shortDesc": "Morbi at vestibulum dui. Pellentesque imperdiet arcu at ornare vulputate.",
+      "longDesc": "Quisque viverra bibendum diam, ac vulputate velit tempus vitae. Suspendisse potenti. Integer in viverra enim. In vel lectus tortor. Praesent eget velit ipsum",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 14,
+      "copnany": "company2",
+      "itemName": "Certifcate№14",
+      "categoryId": 1,
+      "creationDate": "2021-01-01T23:28:56.782Z",
+      "expirationDate": "2022-07-09T23:28:56.782Z",
+      "price": 330,
+      "shortDesc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou",
+      "longDesc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English",
+      "img": "/assets/images/book.jpg"
+    },
+    {
+      "id": 15,
+      "copnany": "company1",
+      "itemName": "Certifcate№15",
+      "categoryId": 1,
+      "creationDate": "2020-01-01T23:28:56.782Z",
+      "expirationDate": "2022-06-01T23:28:56.782Z",
+      "price": 230,
+      "shortDesc": "short one",
+      "longDesc": "long one ",
+      "img": "/assets/images/random.jpg"
+    },
+    {
+      "id": 16,
+      "copnany": "company2",
+      "itemName": "Certifcate№16",
+      "categoryId": 6,
+      "creationDate": "2021-01-01T23:28:56.782Z",
+      "expirationDate": "2022-08-01T23:28:56.782Z",
+      "price": 33.2,
+      "shortDesc": "Lorem Ipsum has been the industry's standard dummy text ever since the ",
+      "longDesc": "but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of",
+      "img": "/assets/images/book.jpg"
+    }
+  ]
+}
