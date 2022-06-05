@@ -1,6 +1,6 @@
 import { Category } from '../../entities/category';
 import { CategoryService } from '../../services/category-service.service';
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {CdkVirtualScrollViewport,ScrollDispatcher} from "@angular/cdk/scrolling";
 
 @Component({
@@ -27,7 +27,7 @@ export class CategoriesDropdownComponent implements OnInit {
   constructor( private certificateService: CategoryService, readonly sd: ScrollDispatcher) {
       this.defaultCategory = {
         id : NaN,
-        name : "All Categoryis",
+        name : "All Categoreis",
         img : ""
       }
   }
@@ -35,13 +35,12 @@ export class CategoriesDropdownComponent implements OnInit {
   ngOnInit(): void{
     this.certificateService.getAll().subscribe(categories => {
       this.categoryList = this.categoryList.concat(this.defaultCategory).concat(categories);
-      for(let i=0;i<this.categoryList.length;i++){
-        if(this.categoryList[i].id == this.selectedCategoryId){
-          this.selectedPosition = i;
-          break;
-        }
-      }
+      this.displaySelected();
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.displaySelected();
   }
   
   openChange($event: boolean): void {
@@ -58,5 +57,14 @@ export class CategoriesDropdownComponent implements OnInit {
     this.selectedPosition = change.source.value;
     this.selectedCategoryId = this.categoryList[this.selectedPosition].id;
     this.categorySelected.emit(this.selectedCategoryId);
+  }
+
+  private displaySelected(): void{
+    for(let i=0;i<this.categoryList.length;i++){
+      if(this.categoryList[i].id == this.selectedCategoryId){
+        this.selectedPosition = i;
+        break;
+      }
+    }
   }
 }

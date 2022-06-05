@@ -29,11 +29,11 @@ export class LocalShoppingCartService {
   removeCertificate(id : number): void{
     this.purchases.delete(id);
     this.writeDataToLocalStorage();
+    this.subject.next(Array.from(this.purchases.values()));
   }
 
   getAllCertificates() : Observable<Certificate[]>{
     this.readFromLocalStorage();
-    
     return this.subject;
   }
   

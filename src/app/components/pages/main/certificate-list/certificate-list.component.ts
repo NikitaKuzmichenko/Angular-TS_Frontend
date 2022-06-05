@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { throttle } from 'lodash';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Certificate } from 'src/app/entities/certificate';
@@ -30,7 +30,9 @@ export class CertificateListComponent implements OnInit, OnDestroy {
 
   constructor(private certificateService: CertificateService, private elementRef: ElementRef) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void { 
     this.subscription = this.certificateService.getAllWithPagination(
       this.baseLimith,
       this.baseOffset,

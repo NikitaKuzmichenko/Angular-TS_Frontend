@@ -22,9 +22,9 @@ export class CheckoutPageComponent implements OnInit {
     private shoppingCar : LocalShoppingCartService) {
 
     this.certificates = shoppingCar.getAllCertificates();
-    this.certificates.subscribe( certificates =>{
+    this.certificates.subscribe(certificates =>{
       this.totalPrice = 0;
-      certificates.forEach(c=>this.totalPrice+=toNumber(c.price));
+      certificates.forEach(c=>this.totalPrice += c.price);
     });
 
     let url = this.pageRouter.getPreviusUrl();
@@ -34,9 +34,7 @@ export class CheckoutPageComponent implements OnInit {
     this.previusUrl = url;
    }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   submitForm(){
     this.shoppingCar.clerar();

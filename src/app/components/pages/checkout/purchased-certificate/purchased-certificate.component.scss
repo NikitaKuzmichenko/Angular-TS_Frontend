@@ -14,7 +14,12 @@
         width: $imgWidth !important;
     }
 
-    div{
+    img:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    div.description{
         margin-left: 50px;
         width: $itemWidth - $imgWidth - 100px;
 
@@ -23,6 +28,15 @@
         }
         p.two_lines_limith{
             width: $itemWidth / 2;
+        }
+    }
+
+    div.price{
+        p{
+            margin-bottom: 10px;
+        }
+        app-button{
+            width: 80px;
         }
     }
 }

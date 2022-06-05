@@ -1,7 +1,18 @@
-<li class="single_item"><img class="small_img" src={{certificate.img}}>
-    <div>
+<li class="single_item">
+    <img class="small_img" src={{certificate.img}} (click)="toItemDetails()">
+    <div class="description">
         <p class="one_lines_limith logo_text">{{certificate.itemName}}</p>
         <p class="two_lines_limith medium_text">{{certificate.longDesc}}</p>
     </div>
-    <p class="font_bold large_text">{{certificate.price | priceFormat : "$"}}</p>
+    <div class="price">
+        <p class="font_bold large_text">{{certificate.price | priceFormat : "$"}}</p>
+        <app-button 
+        width="inherit" 
+        color="black" 
+        backgroundColor="white" 
+        borderColor="black" 
+        text="Remove" 
+        (buttonCicked)="remove()">
+        </app-button>
+    </div>  
 </li>

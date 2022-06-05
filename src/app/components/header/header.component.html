@@ -3,7 +3,7 @@
       <li>
         <a [routerLink]="mainPageUrl" class="logo_text general_link">Logo</a>
       </li>
-      <li>
+      <li class="middleSection">
         <input #sertificate_selector (input)="chek()" class="search" type="text" size="50" placeholder="Search by item name">
         <app-categories-dropdown 
         (categorySelected)="categorySelectedHandler($event)"
