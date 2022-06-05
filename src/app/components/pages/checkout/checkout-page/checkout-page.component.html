@@ -4,7 +4,7 @@
 </div>
 <article class="checkout_centered_container">
     <ol id="sertificate_container" class="sertificate_container">
-        <app-purchased-certificate *ngFor="let certificate of certificates " [certificate]="certificate">
+        <app-purchased-certificate *ngFor="let certificate of certificates | async " [certificate]="certificate">
         </app-purchased-certificate>
     </ol>
     <hr class="divider">

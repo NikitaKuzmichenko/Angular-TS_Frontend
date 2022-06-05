@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { toNumber } from 'lodash';
+import { Observable } from 'rxjs';
 import { Certificate } from 'src/app/entities/certificate';
 import { LocalShoppingCartService } from 'src/app/services/shopping-cart-service.service';
 import { PageRouter, Pages } from 'src/app/utils/pageRouter';
@@ -12,7 +13,7 @@ import { PageRouter, Pages } from 'src/app/utils/pageRouter';
 })
 export class CheckoutPageComponent implements OnInit {
 
-  certificates: Certificate[];
+  certificates: Observable<Certificate[]>;
   totalPrice : number = 0;
   previusUrl : string;
 
@@ -21,7 +22,10 @@ export class CheckoutPageComponent implements OnInit {
     private shoppingCar : LocalShoppingCartService) {
 
     this.certificates = shoppingCar.getAllCertificates();
-    this.certificates.forEach(c=>this.totalPrice+=toNumber(c.price));
+    this.certificates.subscribe( certificates =>{
+      this.totalPrice = 0;
+      certificates.forEach(c=>this.totalPrice+=toNumber(c.price));
+    });
 
     let url = this.pageRouter.getPreviusUrl();
     if(url === undefined){
@@ -30,7 +34,9 @@ export class CheckoutPageComponent implements OnInit {
     this.previusUrl = url;
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   submitForm(){
     this.shoppingCar.clerar();
