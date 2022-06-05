@@ -30,9 +30,6 @@ export class CertificatePreviewComponent implements OnInit {
     if(CertificatePreviewComponent.width === undefined){
       CertificatePreviewComponent.width = this.elementRef.nativeElement.clientWidth;
     }
-
-    this.certificate.creationDate = new Date(this.certificate.creationDate);
-    this.certificate.expirationDate = new Date(this.certificate.expirationDate);
   }
 
   toItemDetails(): void{

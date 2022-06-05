@@ -1,5 +1,6 @@
-import { Component, ElementRef, HostListener, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { throttle } from 'lodash';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { Certificate } from 'src/app/entities/certificate';
 
 import { CertificateService } from 'src/app/services/certificate-service.service';
@@ -11,12 +12,14 @@ import { CertificatePreviewComponent } from '../certificate-preview/certificate-
   templateUrl: './certificate-list.component.html',
   styleUrls: ['./certificate-list.component.scss']
 })
-export class CertificateListComponent implements OnInit {
+export class CertificateListComponent implements OnInit, OnDestroy {
 
   @Input() selectedCategoryId: number = NaN;
   @Input() certificateSelector: string = "";
 
   certificates: Certificate[] = [];
+
+  private subscription: Subscription | undefined;
 
   private baseOffset: number = 0;
   private baseLimith: number = 12;
@@ -27,11 +30,18 @@ export class CertificateListComponent implements OnInit {
 
   constructor(private certificateService: CertificateService, private elementRef: ElementRef) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subscription = this.certificateService.getAllWithPagination(
+      this.baseLimith,
+      this.baseOffset,
+      this.selectedCategoryId,
+      this.certificateSelector
+    )
+      .subscribe(certificates => { this.certificates = certificates });
+  }
 
-  ngOnChanges(changes: SimpleChanges): void { 
-    this.certificateService.getAllWithPagination(this.baseLimith, this.baseOffset, this.selectedCategoryId, this.certificateSelector)
-      .subscribe(certificates => {this.certificates = certificates});
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
   }
 
   @HostListener('document:scroll', ['$event'])
@@ -48,9 +58,18 @@ export class CertificateListComponent implements OnInit {
         let rows: number = Math.floor(this.getCurrentHeight() / CertificatePreviewComponent.height);
 
         const size = this.certificates.length;
-        if (rows * columns >= size) {   
-          this.certificateService.getAllWithPagination(this.addOnScroll, size, this.selectedCategoryId, this.certificateSelector)
-            .subscribe(certificates => this.certificates = this.certificates.concat(certificates));
+        if (rows * columns >= size) {
+          const subscription: Subscription =
+            this.certificateService.getAllWithPagination(
+              this.addOnScroll,
+              size,
+              this.selectedCategoryId,
+              this.certificateSelector
+            )
+              .subscribe(certificates => {
+                this.certificates = this.certificates.concat(certificates)
+                subscription.unsubscribe();
+              });
         }
       }
     }, this.scrollTimeOut)

@@ -4,6 +4,7 @@ import { Certificate } from '../entities/certificate';
 @Injectable({
   providedIn: 'root'
 })
+
 export class LocalShoppingCartService {
 
   private purchases : Map<number,Certificate>;

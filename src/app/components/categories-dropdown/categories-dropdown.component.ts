@@ -1,102 +1,62 @@
 import { Category } from '../../entities/category';
 import { CategoryService } from '../../services/category-service.service';
-import { Component, OnInit, ViewChild, ElementRef, Input, Inject, EventEmitter, Output, SimpleChanges } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {CdkVirtualScrollViewport,ScrollDispatcher} from "@angular/cdk/scrolling";
 
 @Component({
   selector: 'app-categories-dropdown',
   templateUrl: './categories-dropdown.component.html',
-  styleUrls: ['./categories-dropdown.component.scss']
+  styleUrls: ['./categories-dropdown.component.scss'],
 })
+
 export class CategoriesDropdownComponent implements OnInit {
 
-  @ViewChild('drop_down_categories_container') dropdown!: ElementRef;
-
-  @Input("name") public optionName!: string;
-  @Input("value") public optionValue!: string;
-  @Input("attributes") public optionAttributes!: string[];
-  @Input("currentValue") public currentValue: number = NaN;
-  private initValueSet : boolean = false;
+  @Input("currentValue") selectedCategoryId: number | undefined = NaN;
+  @Input() height : number = 50;
+  @Input() width : number = 200;
+  @Input() scrollSize: number = 5;
 
   @Output() categorySelected = new EventEmitter<number>();
 
-  categories: Category[] = [];
+  defaultCategory: Category;
+  categoryList: Category[] = [];
+  selectedPosition: number = 0;
 
-  private maxSieze: number = 5;
-  private minSieze: number = 1;
-
-  constructor(
-    private elementRef: ElementRef,
-    private certificateService: CategoryService,
-    @Inject(DOCUMENT) private document: Document) {
-    }
-
-  ngOnInit(): void {
-    if (!(this.optionName === undefined && this.optionValue === undefined)) {
-
-      const option = this.document.createElement('option');
-      if (this.optionValue !== undefined) {
-        option.value = this.optionValue;
+  @ViewChild(CdkVirtualScrollViewport, { static: true }) cdkVirtualScrollViewPort: CdkVirtualScrollViewport | undefined;
+ 
+  constructor( private certificateService: CategoryService, readonly sd: ScrollDispatcher) {
+      this.defaultCategory = {
+        id : NaN,
+        name : "All Categoryis",
+        img : ""
       }
-      if (this.optionName !== undefined) {
-        option.innerText = this.optionName;
-      }
-      if (this.optionAttributes !== undefined) {
-        for (let i = 0; i < this.optionAttributes.length; i++) {
-          option.setAttribute(this.optionAttributes[i], "true");
+  }
+ 
+  ngOnInit(): void{
+    this.certificateService.getAll().subscribe(categories => {
+      this.categoryList = this.categoryList.concat(this.defaultCategory).concat(categories);
+      for(let i=0;i<this.categoryList.length;i++){
+        if(this.categoryList[i].id == this.selectedCategoryId){
+          this.selectedPosition = i;
+          break;
         }
       }
-
-      this.elementRef.nativeElement.querySelector('select').prepend(option);
-      this.certificateService.getAll().subscribe(categories => {
-        this.categories = categories;
-        this.initValueSet = true;
-      });
+    });
+  }
+  
+  openChange($event: boolean): void {
+    if ($event) {
+      this.cdkVirtualScrollViewPort?.checkViewportSize();
     }
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.setCategory(this.currentValue, this.elementRef.nativeElement.querySelector('select'));
-  }
-
-  ngAfterViewChecked(){
-    if(this.initValueSet){
-      this.setCategory(this.currentValue, this.elementRef.nativeElement.querySelector('select'));
-      this.initValueSet = false;
+ 
+  onSelectionChange(change : any): void {
+    if (!change.isUserInput) {
+      return;
     }
-  }
 
-  private setCategory(value: number, element: any) : boolean{
-    for (let i = 0; i < element.options.length; i++) {
-      if (element.options[i].value == value) {
-        element.selectedIndex = i;
-        return true;
-      }
-    }
-    return false
-  }
-
-  expand(): void {
-    if (this.categories.length < this.maxSieze) {
-      this.dropdown.nativeElement.size = this.categories.length;
-    }
-    else {
-      this.dropdown.nativeElement.size = this.maxSieze;
-    }
-  }
-
-  shrink(): void {
-    this.dropdown.nativeElement.size = this.minSieze;
-  }
-
-  blur(): void {
-    this.dropdown.nativeElement.size = this.minSieze;
-    this.dropdown.nativeElement.blur();
-  }
-
-  selected(): void {
-    const element = this.dropdown.nativeElement
-    const id = element.options[element.selectedIndex].value
-    this.categorySelected.emit(id);
+    this.selectedPosition = change.source.value;
+    this.selectedCategoryId = this.categoryList[this.selectedPosition].id;
+    this.categorySelected.emit(this.selectedCategoryId);
   }
 }

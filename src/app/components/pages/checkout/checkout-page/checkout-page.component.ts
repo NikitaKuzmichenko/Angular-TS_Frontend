@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { toNumber } from 'lodash';
 import { Certificate } from 'src/app/entities/certificate';
 import { LocalShoppingCartService } from 'src/app/services/shopping-cart-service.service';
 import { PageRouter, Pages } from 'src/app/utils/pageRouter';
@@ -20,7 +21,7 @@ export class CheckoutPageComponent implements OnInit {
     private shoppingCar : LocalShoppingCartService) {
 
     this.certificates = shoppingCar.getAllCertificates();
-    this.certificates.forEach(c=>this.totalPrice+=c.price);
+    this.certificates.forEach(c=>this.totalPrice+=toNumber(c.price));
 
     let url = this.pageRouter.getPreviusUrl();
     if(url === undefined){

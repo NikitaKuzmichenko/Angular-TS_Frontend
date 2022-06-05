@@ -1,6 +1,7 @@
 import { Category } from '../../../../entities/category';
 import { CategoryService } from '../../../../services/category-service.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-categories-preview',
@@ -10,12 +11,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class CategoriesPreviewComponent implements OnInit {
   @Output() categorySelected = new EventEmitter<number>();
 
-  categories: Category[] = [];
+  categories: Observable<Category[]> | undefined;
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.categoryService.getAll().subscribe(categories => this.categories = categories);
+    this.categories = this.categoryService.getAll();
   }
 
   categorySelectedHandler(id: number): void {

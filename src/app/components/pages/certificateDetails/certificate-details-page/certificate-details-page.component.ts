@@ -24,11 +24,12 @@ export class CertificateDetailsPageComponent implements OnInit {
       return;
     }
 
-    this.certificateService.getCertificateById(parseInt(idParam)).subscribe(certificates =>{
+    let subsciption = this.certificateService.getCertificateById(parseInt(idParam)).subscribe(certificates =>{
       if(certificates !== undefined){
         this.certificate = certificates[0];
       }
-    })
+      subsciption.unsubscribe();
+    });
   }
 
   ngOnInit(): void {}

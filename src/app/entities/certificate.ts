@@ -2,7 +2,7 @@ export interface Certificate{
     id? : number;
     copnany : string;
     itemName : string;
-    categoryId : number;
+    categoryId : number[];
     creationDate : Date;
     expirationDate : Date;
     price : number;

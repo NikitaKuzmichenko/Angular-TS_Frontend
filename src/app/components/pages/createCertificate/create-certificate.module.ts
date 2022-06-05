@@ -3,7 +3,9 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { GeneralModule } from '../../general.module';
 import { RouterModule, Routes } from '@angular/router';
-
+import { MultiSeltctCategoryDropdownComponent } from './multi-seltct-category-dropdown/multi-seltct-category-dropdown.component';
+import { MatSelectModule} from '@angular/material/select';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const appRoutes: Routes =[
     {
@@ -14,12 +16,15 @@ const appRoutes: Routes =[
   
 @NgModule({
     declarations: [
-        CreateCertificatePageComponent
+        CreateCertificatePageComponent,
+        MultiSeltctCategoryDropdownComponent
     ],
     imports: [
         RouterModule.forChild(appRoutes),
         CommonModule,
-        GeneralModule
+        GeneralModule,
+        MatSelectModule,
+        ScrollingModule 
     ]
   })
   export class CreateCertificateModule { }

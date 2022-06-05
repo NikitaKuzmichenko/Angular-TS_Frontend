@@ -55,9 +55,10 @@ export class RegisterPageComponent implements OnInit {
       address : this.register_form.get("address")?.value
     };
 
-    this.userService.createUser(user).subscribe(user=> {
+    let subsciption = this.userService.createUser(user).subscribe(user=> {
       this.errorMsg="";
       this.router.navigateByUrl(this.pageRouter.getPath(Pages.MainPage));
+      subsciption.unsubscribe();
     })
   }
 

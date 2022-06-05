@@ -30,7 +30,7 @@ export class LoginPageComponent implements OnInit {
       return;
     }
     
-    this.userService.getUserByLogin(this.login_form.get("login")?.value).subscribe(
+    let subsciption = this.userService.getUserByLogin(this.login_form.get("login")?.value).subscribe(
       users=>{
         if(users === undefined || users.length == 0){
           this.errorMsg = this.errorMsgProvider.getErrorByName(ErrorMsgName.AuthorizationFailed);
@@ -42,6 +42,7 @@ export class LoginPageComponent implements OnInit {
         }
         this.errorMsg="";
         this.router.navigateByUrl(this.pageRouter.getPath(Pages.MainPage));
+        subsciption.unsubscribe();
       }
     );
   }

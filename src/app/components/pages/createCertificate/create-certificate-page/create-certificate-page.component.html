@@ -14,14 +14,12 @@
                 <input formControlName="name" class="input_field black_border" type="text">
             </div>
             <div>
-                <div style=" position: absolute; right: 320px;">
                 <p>Category</p>
-                <app-categories-dropdown
+                <app-multi-seltct-category-dropdown
                 (categorySelected)="categorySelectedHandler($event)"
-                [name]="'Select category'" [value]="''" [attributes] = "['disabled','selected','hidden']"  
-                style="z-index: 100; width: 260px;">
-                </app-categories-dropdown>
-                </div>
+                [width] = "260"
+                style="z-index: 100;">
+                </app-multi-seltct-category-dropdown>
             </div>
             <div>
                 <p>Valid to</p>
@@ -47,8 +45,7 @@
             <div class="error_msg_holder">
                 <app-hidden-text 
                 [text]="errorMsg" 
-                backgroundColor="inherit"
-                >
+                backgroundColor="inherit">
                 </app-hidden-text>
             </div>
     

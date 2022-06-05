@@ -54,14 +54,19 @@ body {
     padding-right: 25px;
     background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
     background-size: 20px;
-    color: transparent;
+    line-height: $inputFieldHeight;
 }
 
-.input_field[type=file]::-webkit-file-upload-button {
-    margin-top: 3px;
+input[type="file"]::-webkit-file-upload-button {
+    width: $inputFieldWidth;
+    border: none;
+    float: right;
+    margin-left: 100px;
+
     visibility: hidden;
     user-select: none;
 }
+
 input::placeholder {
     text-align: center;
 }

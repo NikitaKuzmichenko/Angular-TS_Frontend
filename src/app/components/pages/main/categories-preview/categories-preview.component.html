@@ -1,6 +1,6 @@
 <ol class="seconde_header center_content_holder category_container">
     <app-category-preview 
     (categorySelected)="categorySelectedHandler($event)"
-    *ngFor="let category of categories" [category]="category">
+    *ngFor="let category of categories | async" [category]="category">
     </app-category-preview>
 </ol>
