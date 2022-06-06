@@ -48,16 +48,17 @@ export class CertificateService {
       httpGetParams = httpGetParams.set("_limit",limit);
 
       if(categoryId !== undefined && !isNaN(categoryId)){
-        //"(.*?)[^0-9]" + categoryId + "[^0-9](.*?)" for some reason dosent work
         httpGetParams = httpGetParams.set("categoryId_like",categoryId);
       }
 
       if(certificateSelector !== undefined){
-        httpGetParams = httpGetParams.set("q",certificateSelector);
+        httpGetParams = httpGetParams.set("itemName_like",certificateSelector);
       }
 
       httpGetParams = httpGetParams.set("_sort","creationDate");
       httpGetParams = httpGetParams.set("_order","asc");
+      
+      console.log(httpGetParams);
       
       return httpGetParams;
   }
