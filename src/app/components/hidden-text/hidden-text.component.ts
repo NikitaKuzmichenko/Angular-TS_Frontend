@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HiddenTextComponent implements OnInit {
 
-  @Input() text : string = '';
-  @Input() textSize : string = "12px";
-  @Input() backgroundColor : string = "white";
-  @Input() color : string = "red";
-  @Input() textAlign : string = "center";
-  
+  @Input() text: string = '';
+  @Input() textSize: string = "12px";
+  @Input() backgroundColor: string = "white";
+  @Input() color: string = "red";
+  @Input() textAlign: string = "center";
+
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

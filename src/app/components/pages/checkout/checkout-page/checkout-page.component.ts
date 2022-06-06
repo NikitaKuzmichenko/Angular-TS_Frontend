@@ -14,34 +14,34 @@ import { PageRouter, Pages } from 'src/app/utils/pageRouter';
 export class CheckoutPageComponent implements OnInit {
 
   certificates: Observable<Certificate[]>;
-  totalPrice : number = 0;
-  previusUrl : string;
+  totalPrice: number = 0;
+  previusUrl: string;
 
-  constructor(private router : Router,
-    private pageRouter : PageRouter,
-    private shoppingCar : LocalShoppingCartService) {
+  constructor(private router: Router,
+    private pageRouter: PageRouter,
+    private shoppingCar: LocalShoppingCartService) {
 
     this.certificates = shoppingCar.getAllCertificates();
-    this.certificates.subscribe(certificates =>{
+    this.certificates.subscribe(certificates => {
       this.totalPrice = 0;
-      certificates.forEach(c=>this.totalPrice += c.price);
+      certificates.forEach(c => this.totalPrice += c.price);
     });
 
     let url = this.pageRouter.getPreviusUrl();
-    if(url === undefined){
-      url= this.pageRouter.getPath(Pages.MainPage);
+    if (url === undefined) {
+      url = this.pageRouter.getPath(Pages.MainPage);
     }
     this.previusUrl = url;
-   }
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  submitForm(){
+  submitForm() {
     this.shoppingCar.clerar();
     this.router.navigateByUrl(this.pageRouter.getPath(Pages.MainPage));
   }
 
-  back(){
+  back() {
     this.router.navigateByUrl(this.previusUrl);
   }
 }

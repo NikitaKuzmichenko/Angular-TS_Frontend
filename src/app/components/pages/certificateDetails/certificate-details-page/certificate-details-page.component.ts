@@ -12,33 +12,33 @@ import { PageRouter, Pages } from 'src/app/utils/pageRouter';
 })
 export class CertificateDetailsPageComponent implements OnInit {
 
-  certificate! : Certificate;
+  certificate!: Certificate;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private pageRouter : PageRouter,
+    private pageRouter: PageRouter,
     private certificateService: CertificateService,
-    private shoppingCar : LocalShoppingCartService) {
+    private shoppingCar: LocalShoppingCartService) {
     let idParam = this.route.snapshot.paramMap.get('id');
-    if(idParam === null){
+    if (idParam === null) {
       return;
     }
 
-    let subsciption = this.certificateService.getCertificateById(parseInt(idParam)).subscribe(certificates =>{
-      if(certificates !== undefined){
+    let subsciption = this.certificateService.getCertificateById(parseInt(idParam)).subscribe(certificates => {
+      if (certificates !== undefined) {
         this.certificate = certificates[0];
       }
       subsciption.unsubscribe();
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  addToCart(): void{
+  addToCart(): void {
     this.shoppingCar.addCerificate(this.certificate);
   }
 
-  toCheckout():void{
+  toCheckout(): void {
     this.router.navigateByUrl(this.pageRouter.getPath(Pages.CheckoutPage));
   }
 }

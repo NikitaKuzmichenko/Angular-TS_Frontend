@@ -7,10 +7,10 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, SimpleChang
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
   @ViewChild('sertificate_selector') selector!: ElementRef;
-  
+
   @Output() categorySelected = new EventEmitter<number>();
   @Output() certificateSelected = new EventEmitter<string>();
 
@@ -20,12 +20,12 @@ export class HeaderComponent implements OnInit{
   private delay = 500;
   private timeOut: NodeJS.Timeout | undefined;
 
-  loguinUrl : string ="";
-  registerUrl: string ="";
-  checkoutUrl: string ="";
-  mainPageUrl: string ="";
-  
-  constructor(private elementRef: ElementRef,private router: Router,private pageRouter : PageRouter) {
+  loguinUrl: string = "";
+  registerUrl: string = "";
+  checkoutUrl: string = "";
+  mainPageUrl: string = "";
+
+  constructor(private elementRef: ElementRef, private router: Router, private pageRouter: PageRouter) {
     this.registerUrl = pageRouter.getPath(Pages.RegisterPage);
     this.loguinUrl = pageRouter.getPath(Pages.LoginPage);
     this.checkoutUrl = pageRouter.getPath(Pages.CheckoutPage);
@@ -54,19 +54,19 @@ export class HeaderComponent implements OnInit{
   }
 
   private sendRequest() {
-    let url : string = this.router.url;
-    
-    if(url.indexOf('?') !== -1){
+    let url: string = this.router.url;
+
+    if (url.indexOf('?') !== -1) {
       url = url.substring(0, url.indexOf('?'));
     }
     url = url.substring(0, url.length - 1)
-    
-    if(url !== this.mainPageUrl){
+
+    if (url !== this.mainPageUrl) {
       console.log("sending");
-      
-      this.router.navigateByUrl(this.mainPageUrl + "?categoryId=" +  this.selectedCategoryId +
-      "&certificateSelector=" + this.selector.nativeElement.value);
+
+      this.router.navigateByUrl(this.mainPageUrl + "?categoryId=" + this.selectedCategoryId +
+        "&certificateSelector=" + this.selector.nativeElement.value);
     }
-    
+
   }
 }

@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PriceFormatPipe implements PipeTransform {
 
-  transform(value: number, currencySymbol : string): string {
+  transform(value: number, currencySymbol: string): string {
     return currencySymbol + value.toFixed(2).toString().replace(".", ",");
   }
 }

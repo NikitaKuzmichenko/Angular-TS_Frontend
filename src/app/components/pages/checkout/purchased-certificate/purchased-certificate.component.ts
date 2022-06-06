@@ -11,25 +11,25 @@ import { LocalShoppingCartService } from 'src/app/services/shopping-cart-service
 })
 export class PurchasedCertificateComponent implements OnInit {
 
-  @Input("certificate") certificate! : Certificate;
+  @Input("certificate") certificate!: Certificate;
 
-  constructor( private router : Router, 
-    private pageRouter : PageRouter, 
-    private shoppingCar : LocalShoppingCartService) {}
+  constructor(private router: Router,
+    private pageRouter: PageRouter,
+    private shoppingCar: LocalShoppingCartService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  toItemDetails(): void{
-    if(this.certificate.id === undefined){
+  toItemDetails(): void {
+    if (this.certificate.id === undefined) {
       return
-    }else{
-    this.router.navigateByUrl(
-      formatString(this.pageRouter.getPath(Pages.CertificateDetailsPage),[this.certificate.id.toString()]));
+    } else {
+      this.router.navigateByUrl(
+        formatString(this.pageRouter.getPath(Pages.CertificateDetailsPage), [this.certificate.id.toString()]));
     }
   }
 
-  remove(): void{
-    if(this.certificate.id != undefined){
+  remove(): void {
+    if (this.certificate.id != undefined) {
       this.shoppingCar.removeCertificate(this.certificate.id);
     }
   }

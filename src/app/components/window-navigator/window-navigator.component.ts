@@ -18,7 +18,7 @@ export class WindowNavigatorComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   @HostListener('document:scroll', ['$event'])
   getScrollHeight(event: any) {

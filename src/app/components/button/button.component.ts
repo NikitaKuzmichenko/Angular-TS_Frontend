@@ -7,20 +7,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-  @Input() text : string = "";
-  @Input() backgroundColor : string = "white";
-  @Input() color : string = "black";
-  @Input() borderColor : string = "black";
-  @Input() width : string =  "80px";
-  @Input() height : string  = "25px";
+  @Input() text: string = "";
+  @Input() backgroundColor: string = "white";
+  @Input() color: string = "black";
+  @Input() borderColor: string = "black";
+  @Input() width: string = "80px";
+  @Input() height: string = "25px";
 
   @Output() buttonCicked = new EventEmitter<void>();
-  
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor() { }
 
-  clicked(event : Event): void {
+  ngOnInit(): void { }
+
+  clicked(event: Event): void {
     event.preventDefault();
     this.buttonCicked.emit();
   }

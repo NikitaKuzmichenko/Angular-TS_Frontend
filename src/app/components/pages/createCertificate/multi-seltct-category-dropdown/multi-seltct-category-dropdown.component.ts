@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { CdkVirtualScrollViewport,ScrollDispatcher } from "@angular/cdk/scrolling";
+import { CdkVirtualScrollViewport, ScrollDispatcher } from "@angular/cdk/scrolling";
 import { Category } from 'src/app/entities/category';
 import { CategoryService } from 'src/app/services/category-service.service';
 
@@ -24,7 +24,7 @@ export class MultiSeltctCategoryDropdownComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport, { static: true })
   cdkVirtualScrollViewPort: CdkVirtualScrollViewport | undefined;;
 
-  constructor(private certificateService: CategoryService,readonly sd: ScrollDispatcher) { }
+  constructor(private certificateService: CategoryService, readonly sd: ScrollDispatcher) { }
 
   ngOnInit(): void {
     this.certificateService.getAll().subscribe(categories => {
@@ -32,7 +32,7 @@ export class MultiSeltctCategoryDropdownComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void { }
 
   openChange($event: boolean): void {
     if ($event) {
