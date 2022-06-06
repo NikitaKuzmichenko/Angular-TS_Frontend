@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PriceFormatPipe implements PipeTransform {
 
   transform(value: number, currencySymbol : string): string {
-    return currencySymbol + value.toString().replace(".", ",");
+    return currencySymbol + value.toFixed(2).toString().replace(".", ",");
   }
 }
