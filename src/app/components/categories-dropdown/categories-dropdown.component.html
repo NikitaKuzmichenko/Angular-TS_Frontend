@@ -1,0 +1,11 @@
+<mat-form-field class="dropdown" [ngStyle]="{'width.px': width,'height.px' : height}" appearance="standard">
+    <mat-select class="seelctor" [ngStyle]="{'width.px': width,'height.px' : height}"
+    [(value)]="selectedPosition" 
+    (openedChange)="openChange($event)"
+    disableOptionCentering>
+        <cdk-virtual-scroll-viewport itemSize="height" [style.height.px]=height*scrollSize>
+            <mat-option *cdkVirtualFor="let category of categoryList; index as i" [value]="i"
+                (onSelectionChange)="onSelectionChange($event)">{{category.name}}</mat-option>
+        </cdk-virtual-scroll-viewport>
+    </mat-select>
+</mat-form-field>

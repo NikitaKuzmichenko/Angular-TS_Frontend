@@ -1,0 +1,37 @@
+@import '/src/styles.scss';
+$registerFormWidth : 600px;
+
+article {
+    background-color: white !important;
+}
+
+.register_form{
+    list-style: none;
+    width: $registerFormWidth;  
+    background-color: $formBackGroundColor;
+}
+
+.two_button_holder{
+    margin-top: 10px;
+    app-button{
+        width: 126px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.drop_down{
+    border-color: rgb(8, 8, 8);
+    border-width: 1px;
+    z-index: 1;
+    width: 120px;
+    border-radius:0%;
+
+    option{
+        text-align-last: center;
+    }
+}
+
+.error_msg_holder{
+    margin-top: 12px;
+}

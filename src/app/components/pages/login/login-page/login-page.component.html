@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<article class="center_content_holder">
+    <div>
+      <ol class="login_form">
+        <li>
+          <div class="login_circle">
+            <p>Logo</p>
+          </div>
+        </li>
+        <li>
+          <form [formGroup]="login_form" class="input_block" (ngSubmit)="submitForm()">
+            <input required formControlName="login" class="input_field" type="text" placeholder="Login">
+            <input required formControlName="password" class="input_field" type="password" placeholder="Password">
+            <app-button 
+              (buttonCicked)="submitForm()"
+              width="inherit" 
+              height="inherit"  
+              color="white" 
+              backgroundColor= "rgb(140, 185, 72)" 
+              borderColor="rgb(140, 185, 72)" 
+              text="Login"
+            >
+            </app-button>
+            <app-hidden-text 
+              [text]= "errorMsg"
+              backgroundColor="inherit" style="margin-top: 20px;">
+            </app-hidden-text>
+          </form>
+        </li>
+        <li>
+        
+        </li>
+      </ol>
+
+    </div>
+
+  </article>

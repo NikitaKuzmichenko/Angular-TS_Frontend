@@ -1,0 +1,45 @@
+$width : 80px;
+$height : 30px;
+$inputFieldBorder : 0px;
+
+$textAlign : center;
+
+.default_button {
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    color: rgb(8, 8, 8);
+    border-color: rgb(8, 8, 8);
+    background-color: white;
+    border-width: 1px;
+    border-radius: 0%;
+    cursor: pointer;
+}
+
+.green_button {
+    border: $inputFieldBorder;
+    width: $width;
+    height: $height;
+    text-align: $textAlign;
+    margin-bottom: 10px;
+    color: white;
+    background-color: rgb(140, 185, 72);
+    cursor: pointer;
+}
+
+
+.white_button {
+    width: $width;
+    height: 25px;
+    text-align: $height;
+    color: rgb(8, 8, 8);
+    border-color: rgb(8, 8, 8);
+    background-color: white;
+    border-width: 1px;
+    border-radius: 0%;
+    cursor: pointer;
+}
+
+.default_button:active, .white_button:active, .green_button:active{
+    transform: scale(1.05)
+}

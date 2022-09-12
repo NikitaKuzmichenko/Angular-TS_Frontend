@@ -1,0 +1,63 @@
+@import '/src/styles.scss';
+
+header{
+    color: rgb(0, 0, 0);
+    background-color: $headeBackGroundColor;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+
+    li{
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.link_container {    
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+
+    a{
+        margin-top: 5px;
+        color: $borderColor;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+}
+
+.general_link{
+    color: $borderColor;
+    text-decoration: none;
+}
+
+.search{
+    border-color: $borderColor;
+    border-width: 1px;
+    height: 30px;
+    width: 300px;
+    border-radius:0%;
+
+    font-size: 17px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.search::placeholder {
+    color: black;
+    
+    font-size: 17.5px;
+    text-align: center;
+}
+
+.middleSection{
+    margin-left: 110px;
+}

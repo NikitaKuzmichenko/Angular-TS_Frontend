@@ -1,0 +1,27 @@
+.toTopBtn {
+    display: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 60px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    cursor: pointer;
+    background: url("/assets/images/arrowUp.png");
+    background-size: cover;
+}
+
+.toLastScrollBtn {
+    display: none;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    cursor: pointer;
+    background: url("/assets/images/refresh.png");
+    background-size: cover;
+}

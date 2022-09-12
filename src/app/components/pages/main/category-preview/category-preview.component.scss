@@ -1,0 +1,60 @@
+@import '/src/styles.scss';
+
+.category_preView  {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background-color: #fff;
+   
+    img {
+        display: block;
+        position: relative;
+        height:auto;
+        display: block;
+
+        height: 80px !important;
+        width: 120px !important;
+    }
+
+    div {
+
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        text-align: center;
+
+        a {
+            border-radius: 5px;
+            width: 70%;
+            margin: auto;
+            top: 0; left: 0; bottom: 0; right: 0;
+    
+            background: rgb(42, 41, 41);
+            color: #fff;
+            font-size: $generalTextFontSize;
+        }
+    }
+
+    div {
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        transform: translate(0px, 90px);
+    }
+}
+
+.category_preView:hover img {
+    cursor: pointer;
+    filter: blur(1px);
+    border: 1px solid #000000;
+}
+
+.category_preView:hover div {
+    cursor: pointer;
+    opacity: 1;
+    transform: translate(0px, 0px);
+}

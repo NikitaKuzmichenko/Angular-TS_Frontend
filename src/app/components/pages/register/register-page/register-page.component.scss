@@ -1,0 +1,21 @@
+@import '/src/styles.scss';
+
+$registerFormWidth : 600px;
+
+.register_form{
+    list-style: none;
+    width: $registerFormWidth;  
+    background-color: $formBackGroundColor;
+}
+
+.two_button_holder{
+    padding-bottom: 10px;
+
+    app-button{
+        width: 120px;
+        margin-left: 10px;
+        margin-right: 10px;
+        
+    }
+}
+

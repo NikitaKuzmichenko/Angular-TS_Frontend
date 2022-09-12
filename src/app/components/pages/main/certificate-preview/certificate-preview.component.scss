@@ -1,0 +1,84 @@
+
+$preVewWight : 200px;
+$preVewHeight : 330px;
+
+.small_img{
+    height: 60px; 
+    width: 60px; 
+    background-color: white; 
+}
+
+.preView_img{
+    height: $preVewWight * 1; 
+    width: $preVewWight; 
+    background-color: rgb(65, 63, 63); 
+    transition: 0.1s;
+    
+}
+
+.preView_img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.sertificate_preView{
+    position: relative;
+    display: flex; 
+    flex-flow: column; 
+    height: $preVewHeight; 
+    width: $preVewWight;
+    background-color: white;
+    margin: 0 20px 20px 20px;
+
+    p{
+        margin-left: 5px;
+    }
+
+    div{
+        margin-top: 5px;
+        display:flex; 
+        justify-content: space-between; 
+        align-items: center;
+        flex-flow:row;
+        a{  
+            margin-left: 10px;
+            height: 40px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            flex-flow:row;
+        };
+    }
+
+    hr{
+        position: absolute; 
+        bottom: 45px;
+        margin-top: 5px;
+        width: $preVewWight;
+        background-color: #000000;
+    }
+
+    div:last-child{
+        display:flex; 
+        justify-content: space-between; 
+        flex-flow:row;
+        position: absolute;
+        bottom: 5px;
+        p{
+            width: 70px;
+            margin-right: 20px; 
+            margin-left: 10px;
+        }
+    }
+}
+
+.description_holder{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+
+    .small_text{
+        margin-top: 3px;
+    }
+}

@@ -1,0 +1,21 @@
+@import '/src/styles.scss';
+
+.category_container{
+    height: 120px !important; 
+    list-style: none !important; 
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 200px;
+    padding-right: 200px;
+
+    app-category-preview {
+        display: flex; 
+        flex-flow: column; 
+        align-items: center; 
+        justify-content: space-around;
+        flex-direction: column;
+        height: 100px; 
+        margin: auto;
+    }
+
+}

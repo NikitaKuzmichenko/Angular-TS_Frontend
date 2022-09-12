@@ -1,0 +1,12 @@
+@import '/src/styles.scss';
+
+.holder{
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px !important; 
+    margin-bottom: 40px !important; 
+    margin-left: 40px !important; 
+    margin-right: 40px !important; 
+}
